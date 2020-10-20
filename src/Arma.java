@@ -5,8 +5,10 @@ public class Arma {
     private double stat;
 
     //CONSTRUCTOR
-    public Arma(){
-
+    public Arma(String nombre, double stat)
+    {
+        nombre=nombre;
+        stat=stat;
     }
     
     public void setNombre(String name){
