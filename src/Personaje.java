@@ -4,11 +4,11 @@
      private Arma arma;
      private String nombre;
 
-    Personaje(int x,int y, Arma arma){
+    Personaje(String nombre,int x,int y, Arma arma){
         this.x=x;
         this.y=y;
         this.arma= arma;
-         
+        this.nombre=nombre;         
     }
 
     public int getX(){

@@ -1,51 +1,47 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        
 
         GestorPrototype gestor= new GestorPrototype();
+        System.out.println("\n EJEMPLO CLONACION SUPERFICIAL \n");
 
         Arma arma1 = new Arma("Excalibur",100);
-        
-        Arma arma2 = new Arma("Tizona",150);
-        
-        Arma arma3 = new Arma("Piedra",1500);
-        
-        Arma arma4 = new Arma("Palo",2220);
-        
-        Caballero caballeroPrototipo=gestor.nuevoCaballero(10, 10, arma1);
+        Arma arma2 = new Arma("Tizona",150);   
+
+        Caballero caballeroPrototipo=gestor.nuevoCaballero("CaballeroPrototipo",10, 10, arma1); //Se crea el prototipo
         
         System.out.println(caballeroPrototipo);
 
-        Personaje caballero1= (Personaje) caballeroPrototipo.clonar();
-        System.out.println(caballero1);
+        Personaje caballeroClon= (Personaje) caballeroPrototipo.clonar();//se hace un clon del prototipo
+        caballeroClon.setNombre("CaballeroClon");//Los tipos de datos primitivos Java los copia en vez de referenciarlos
+        System.out.println(caballeroClon);
 
-        Personaje caballero2= (Personaje) caballeroPrototipo.clonar();
-        System.out.println(caballero2);
+        System.out.println("Comparando ambas armas: "+ (caballeroPrototipo.getArma()==caballeroClon.getArma() ) );// comparando retorna true esto debido a que son el mismo espacio en memoria
 
-        System.out.println(caballeroPrototipo.getArma()==caballero1.getArma());
+        caballeroPrototipo.getArma().setNombre("Kodachi");// al cambiar el nombre del objeto al ser referenciado todas las copias cambian tambien
 
-        caballeroPrototipo.getArma().setNombre("Yochi");
-
+        System.out.println("Comparando nuevamente: ");
         System.out.println(caballeroPrototipo);
-        
-        System.out.println(caballero1);
+        System.out.println(caballeroClon);
 
         System.out.println("-----------------------------------------");
 
-        Personaje orcoPrototipo=gestor.nuevoOrco(50, 50, arma3);
+        System.out.println("\n EJEMPLO CLONACION PROFUNDA \n");
+        Personaje orcoPrototipo=gestor.nuevoOrco("OrcoPrototipo",50, 50, arma2);
         System.out.println(orcoPrototipo);
 
-        Object orco1=orcoPrototipo.clonar();
-        System.out.println(orco1);
+        Orco orcoClon=(Orco) orcoPrototipo.clonar();// se realiza implementacion profunda
+        orcoClon.setNombre("OrcoClon");//Los tipos de datos primitivos Java los copia en vez de referenciarlos
+        System.out.println(orcoClon);
 
-        Personaje orco2= (Personaje) orcoPrototipo.clonar();
-        System.out.println(orco2);
 
-        orcoPrototipo.getArma().setNombre("Stevenita");
-
-        System.out.println(orcoPrototipo);
+        System.out.println("Comparando ambas armas: "+ (orcoPrototipo.getArma()==orcoClon.getArma() ) );// comparando retorna false pues son objetos diferentes en memoria
         
-        System.out.println(orco1);
+        orcoPrototipo.getArma().setNombre("Hielo");//para evidenciar mejor lo anterior
+        
+        System.out.println("Comparando nuevamente: ");
+        System.out.println(orcoPrototipo);
+        System.out.println(orcoClon);
 
         
 
@@ -54,4 +50,5 @@ public class App {
 
 
     }
+
 }

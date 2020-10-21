@@ -8,14 +8,14 @@ public class GestorPrototype {
         System.out.println("Gestor Creado");
     }
 
-    public Caballero nuevoCaballero(int x, int y, Arma arma) {
-        Caballero caballero = new Caballero(x, y, arma);
+    public Caballero nuevoCaballero(String nombre,int x, int y, Arma arma) {
+        Caballero caballero = new Caballero(nombre,x, y, arma);
         listaCaballeros.add(caballero);
         return caballero;
     }
 
-    public Personaje nuevoOrco(int x, int y, Arma arma) {
-        Orco orquito = new Orco(x, y, arma);
+    public Personaje nuevoOrco(String nombre,int x, int y, Arma arma) {
+        Orco orquito = new Orco(nombre,x, y, arma);
         listaOrcos.add(orquito);
         return orquito;
 
