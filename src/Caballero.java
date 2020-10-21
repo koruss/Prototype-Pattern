@@ -6,8 +6,8 @@ public class  Caballero extends Personaje{
         System.out.println("Caballero Creado");
     }
     @Override
-    public Personaje clonar() throws CloneNotSupportedException {
-        return (Personaje) super.clone(); //el metodo clone devuelve un "Object" debido a esto es necesario realizar un casteo :)
+    public Caballero clonar() throws CloneNotSupportedException {
+        return (Caballero) super.clone(); //el metodo clone devuelve un "Object" debido a esto es necesario realizar un casteo :)
      } // el metodo clone de Java
 
     public String toString() {

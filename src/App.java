@@ -12,7 +12,7 @@ public class App {
         
         Arma arma4 = new Arma("Palo",2220);
         
-        Personaje caballeroPrototipo=gestor.nuevoCaballero(10, 10, arma1);
+        Caballero caballeroPrototipo=gestor.nuevoCaballero(10, 10, arma1);
         
         System.out.println(caballeroPrototipo);
 
@@ -22,9 +22,9 @@ public class App {
         Personaje caballero2= (Personaje) caballeroPrototipo.clonar();
         System.out.println(caballero2);
 
-        System.out.println(caballeroPrototipo.equals(caballero1));
+        System.out.println(caballeroPrototipo.getArma()==caballero1.getArma());
 
-        caballeroPrototipo.setArma(arma2);
+        caballeroPrototipo.getArma().setNombre("Yochi");
 
         System.out.println(caballeroPrototipo);
         
@@ -41,7 +41,7 @@ public class App {
         Personaje orco2= (Personaje) orcoPrototipo.clonar();
         System.out.println(orco2);
 
-        orcoPrototipo.setArma(arma4);
+        orcoPrototipo.getArma().setNombre("Stevenita");
 
         System.out.println(orcoPrototipo);
         

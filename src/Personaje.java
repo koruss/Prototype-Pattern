@@ -2,6 +2,7 @@
      private int x;
      private int y; 
      private Arma arma;
+     private String nombre;
 
     Personaje(int x,int y, Arma arma){
         this.x=x;
@@ -32,6 +33,14 @@
 
     public void setArma(Arma arma){
         this.arma=arma;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String x){
+        this.nombre=x;
     }
 
     public abstract Object clonar() throws CloneNotSupportedException;

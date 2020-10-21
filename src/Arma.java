@@ -1,4 +1,4 @@
-public class Arma {
+public class Arma implements Cloneable{
 
     //ATRIBUTOS
     private String nombre;
@@ -25,6 +25,10 @@ public class Arma {
 
     public void setStat(double estadistica){
         stat= estadistica;
+    }
+
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 
 

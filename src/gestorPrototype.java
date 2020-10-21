@@ -8,8 +8,8 @@ public class GestorPrototype {
         System.out.println("Gestor Creado");
     }
 
-    public Personaje nuevoCaballero(int x, int y, Arma arma) {
-        Personaje caballero = new Caballero(x, y, arma);
+    public Caballero nuevoCaballero(int x, int y, Arma arma) {
+        Caballero caballero = new Caballero(x, y, arma);
         listaCaballeros.add(caballero);
         return caballero;
     }
