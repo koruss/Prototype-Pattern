@@ -7,8 +7,8 @@ public class Arma {
     //CONSTRUCTOR
     public Arma(String nombre, double stat)
     {
-        nombre=nombre;
-        stat=stat;
+        this.nombre=nombre;
+        this.stat=stat;
     }
     
     public void setNombre(String name){

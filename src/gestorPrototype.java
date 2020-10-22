@@ -8,45 +8,48 @@ public class GestorPrototype {
         System.out.println("Gestor Creado");
     }
 
-    public void nuevoCaballero(int x, int y, Arma arma) {
+    public Personaje nuevoCaballero(int x, int y, Arma arma) {
         Personaje caballero = new Caballero(x, y, arma);
         listaCaballeros.add(caballero);
+        return caballero;
     }
 
-    public void nuevoOrco(int x, int y, Arma arma) {
+    public Personaje nuevoOrco(int x, int y, Arma arma) {
         Orco orquito = new Orco(x, y, arma);
+        listaOrcos.add(orquito);
+        return orquito;
 
     }
 
     public Personaje getOrco() {
-        return listaOrcos.get(listaOrcos.size());
+        return listaOrcos.get(listaOrcos.size()-1);
     }
 
     public Personaje getCaballero() {
-        return listaCaballeros.get(listaCaballeros.size());
+        return listaCaballeros.get(listaCaballeros.size()-1);
     }
 
-    public Personaje clonarCaballero() {
-        Personaje caballerito = getCaballero();
+    // public Personaje clonarCaballero() {
+    //     Personaje caballerito = getCaballero();
 
-        try {
-            return (Caballero) caballerito.clonar();
-        } catch (CloneNotSupportedException e) {
-            System.out.println("Error al crear el caballero clonado");
-            System.out.println(e);
-        }
-        return null;
+    //     try {
+    //         return (Caballero) caballerito.clonar();
+    //     } catch (CloneNotSupportedException e) {
+    //         System.out.println("Error al crear el caballero clonado");
+    //         System.out.println(e);
+    //     }
+    //     return null;
 
-    }
+    // }
 
-    public Personaje clonarOrco(){
-        Personaje orquito= getOrco();
-        try{
-            return (Orco) orquito.clonar();
-        }catch(CloneNotSupportedException e){
-            System.out.println("Error al crear el Orco clonado");
-        }
-        return null;
-    }
+    // public Personaje clonarOrco(){
+    //     Personaje orquito= getOrco();
+    //     try{
+    //         return (Orco) orquito.clonar();
+    //     }catch(CloneNotSupportedException e){
+    //         System.out.println("Error al crear el Orco clonado");
+    //     }
+    //     return null;
+    // }
 
 }

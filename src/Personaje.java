@@ -4,14 +4,41 @@
      private Arma arma;
 
     Personaje(int x,int y, Arma arma){
-        x=x;
-        y=y;
-        arma= arma;
+        this.x=x;
+        this.y=y;
+        this.arma= arma;
          
     }
 
-    public Personaje clonar() throws CloneNotSupportedException{
-        return (Personaje) this.clone(); //el metodo clone devuelve un "Object" debido a esto es necesario realizar un casteo :)
-    } // el metodo clone de Java 
+    public int getX(){
+        return this.x;
+    }
+
+    public int getY(){
+        return this.y;
+    }
+
+    public Arma getArma(){
+        return this.arma;
+    }
+
+    public void setX(int x){
+        this.x=x;
+    }
+
+    public void setY(int y){
+        this.y=y;
+    }
+
+    public void setArma(Arma arma){
+        this.arma=arma;
+    }
+
+    public abstract Object clonar() throws CloneNotSupportedException;
+
+    // @Override
+    // public Object clonar() throws CloneNotSupportedException{
+    //     return super.clone();
+    // } 
 
  }
